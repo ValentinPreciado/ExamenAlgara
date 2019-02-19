@@ -1,0 +1,163 @@
+1.	Que es un sistema de control de versiones 
+El control de versiones es un sistema que registra los cambios realizados sobre un archivo o conjunto de archivos a lo largo del tiempo de tal manera que sea posible recuperar versiones especificas más adelante.
+2.	Que problema intenta resolver un sistema de control de versiones 
+Resolver distintos conflictos que se presente a lo largo de la elaboración  un proyecto en general trabajos entre dos o mas personas de tal manera que se puede llevar un seguimiento de el avance del proyecto con distintas versiones del mismo y llevar un control de ellas como cuando fueron modificadas que se modifico y quien lo hizo entro otros también permite  a los usuarios comprender mas fácilmente lo que hace la otra persona 
+3.	Mencione al menos 5 ventajas de utilizar un sistema de control de versiones 
+ revertir archivos a un estado anterior, revertir el proyecto entero a un estado anterior, comparar cambios a lo largo del tiempo, ver quién modificó por última vez algo que puede estar causando un problema, quién introdujo un error y cuándo, y mucho más. Usar un VCS también significa generalmente que si fastidias o pierdes archivos, puedes recuperarlos fácilmente. 
+
+4.	Cuando se inventaron los scv
+En 1972, se inventó el Source Code Control System (SCCS), o Sistema de Control de Código Fuente. Fue desarrollado en los Laboratorios Bell por Marc J. Rochkid.
+5.	Menciona al menos 5 sistemas de scv
+GNU, Mercurial, Git, SVK, Monotone, Fossil
+6.	Cual es la diferencia que existe entre los scv distribuidos y los no distribuidos
+Distribuidos:  los clientes no sólo descargan la última instantánea de los archivos: replican completamente el repositorio. Así, si un servidor muere, y estos sistemas estaban colaborando a través de él, cualquiera de los repositorios de los clientes puede copiarse en el servidor para restaurarlo. Cada vez que se descarga una instantánea, en realidad se hace una copia de seguridad completa de todos los datos 
+No Distribuidos (centralizados): Estos sistemas, como CVS, Subversion, y Perforce, tienen un único servidor que contiene todos los archivos versionados, y varios clientes que descargan los archivos desde ese lugar central. Durante muchos años éste ha sido el estándar para el control de versiones 
+7.	Que es absolutamente necesario para tener un sistema de control de scv
+Para poder utilizar el VCS llamado Git en una computadora con el S.O. Windows, lo primero que necesitamos es descargar desde el sitio oficial https://git-scm.com/ en el apartado Downloads, seleccionamos Windows y posteriormente empezará automáticamente la descarga del instalador “git-version.exe”.
+Después de que se haya terminado la descarga, ejecutamos el archivo, leemos el contrato y damos siguiente, luego nos dará a elegir dónde queremos que se instale el programa, seleccionamos un directorio a nuestro gusto y damos siguiente.
+Luego veremos una lista de componentes disponibles para ser instalados, ya vienen seleccionados los básicos. Hacemos click en siguiente.
+Luego veremos tres opciones, seleccionamos la que dice “Use Git from the Windows Command Prompt” que es para decidir desde donde ejecutar Git, que en este caso será desde la ventana de comando. Hecho eso pulsamos siguiente, ahora veremos nuevamente otras tres opciones y seleccionamos la primera que dice “Checkout Windows-style, commit Unix-style line endings” que es para configurar el formato para los finales de línea de archivos. Posteriormente damos siguiente.
+Veremos nuevamente otra ventana con dos opciones, seleccionamos la que dice “Use MinTTY (the default terminal of MSYS2), que es el tipo de emulador que usará Git Bash. Damos siguiente.
+En la siguiente ventana dejamos marcadas las primeras dos opciones y damos siguiente, dejamos deshabilitado el modo experimental y damos Instalar.
+Ya que haya terminado damos en finalizar y se ejecutará automáticamente. Entonces verás que abre una terminal para poder ingresar los comandos de Unix y de Git. 
+Y eso es todo lo necesario para instalar un Sistema de Control de Versiones (VCS).
+
+8.	Que es un repositorio 
+El repositorio es el lugar en el que se almacenan los datos actualizados e históricos de cambios, a menudo en un servidor. A veces se le denomina depósito o depot. Puede ser un sistema de archivos en un disco duro, un banco de datos, etc..
+9.	A que sele llaman branches (ramas)
+ cuando se van a llevar a cabo cambios importantes que romperán la compilación, pruebas, experimentos o intentos de optimización, debe crearse una nueva rama de desarrollo, con la que no molestemos a los compañeros, esto es un branch: una copia del código o la rama de la que deriva. En esta copia haremos nuestros cambios, integraremos los arreglos que puedan haberse ido haciendo en el trunk, y, una vez terminado el desarrollo en la rama, integraremos (o no) los cambios en el trunk. También puede crearse una rama para una versión terminada, hacer mantenimiento de esta versión sobre esta rama, y continuar el desarrollo de la nueva versión en el trunk.
+10.	A que sele denomina conflicto en los scv
+Un conflicto es cuando al unir dos o más ramas se tiene que modificar el código y ambas ramas hicieron modificaciones a la misma función, entonces Git no sabe cuál elegir y determina que hay un conflicto y te lo hace saber para qué resuelvas cuál debe conservarse.
+11.	Que es un biff
+Un cambio representa una modificación específica a un archivo bajo control de versiones. La granularidad de la modificación considerada un cambio varía entre diferentes sistemas de control de versiones.
+12.	Que es un parche (patch)
+En muchos sistemas de control de versiones con commits multi-cambio atómicos, una lista de cambios identifica el conjunto de cambios hechos en un único commit. Esto también puede representar una vista secuencial del código fuente, permitiendo que el fuente sea examinado a partir de cualquier identificador de lista de cambios particular.
+13.	Que es un fork  (bifurcación)
+Un módulo puede ser branched o bifurcado en un instante de tiempo de forma que, desde ese momento en adelante se tienen dos copias (ramas) que evolucionan de forma independiente siguiendo su propia línea de desarrollo. El módulo tiene entonces 2 (o más) "ramas".
+23. ¿Qué pasa con el tamaño del repositorio si versionamos repetidamente archivos de texto?
+Su tamaño va en aumento, dependiendo de qué tanta cantidad de texto fue añadida.
+24. ¿Qué pasa si añadimos una imagen y la versionamos repetidamente?
+Después de editar una imagen y versionarla, el tamaño del repositorio aumenta considerablemente.
+25. ¿Es normal o no versionar la base de datos? Argumenta tu respuesta
+No es lo más recomendado, Git está hecho para almacenar código principalmente, al estar versionando tu base de datos una y otra vez, generará una gran carga de almacenamiento dependiendo de cuánto pese la base de datos que quieres versionar, por ello no se recomienda que se haga eso.
+26. ¿Qué diferencia hay entre versionar el archivo de la base de datos comparado con versionar el código fuente SQL con el que creas la base de datos?
+Versionar el código fuente de la base de datos es lo más recomendable porque así puedes tener un respaldo del código fuente en caso de que se pierda, versionar la base de datos con información NO ES RECOMENDABLE generaría una carga pesada.
+27. En general, ¿cuáles son las prácticas de los sistemas de control de versiones con respecto a los archivos multimedia?
+o	Decidir cuántas versiones del archivo deben mantenerse, cuáles, durante cuánto tiempo y cómo serán organizadas.
+o	Identificar las versiones más importantes que deben ser guardadas.
+o	Registrar las versiones y estado de un archivo.
+o	Registrar los cambios que se han hecho en un archivo cada vez que se haga una versión nueva del mismo.
+o	Mantener un archivo maestro único en un formato apropiado para evitar problemas de control de versiones.
+28. En general, ¿cómo determinamos cuáles archivos deben ser incluidos y cuáles deben ser excluidos de un repositorio?
+Lo recomendable es incluir archivos:
+•	Que contienen claves privadas para acceder a algún servicio web requerido.
+•	De configuración con contraseñas de las bases de datos.
+•	De código fuente.
+•	De configuración del entorno de desarrollo.
+29. ¿Cuál es el mecanismo que provee un sistema de control de versiones para excluir archivos?
+git ignore
+
+30. ¿Cuáles son las mejores prácticas para lidiar con conflictos?
+Antes de realizar cualquier acción lo mejor es tomar una decisión de saber cuál de las modificaciones existentes es la mejor para el proyecto. Los conflictos aparecen al unir dos o más ramas secundarias (x, y) a la rama principal (master).
+Para agregarlas se usa git merge ramaX y lo mismo con la otra rama, pasa que en ambas están modificados el mismo archivo en las mismas líneas de comando, entonces se hace la elección de cuál es la mejor versión para el proyecto.
+
+31. En un ambiente empresarial, ¿Quién es el encargado del Sistema de Control de Versiones?
+El administrador del mismo.
+32. ¿Cómo se llama el rol si es que existe?
+Administrador de la configuración del proyecto.
+
+33. En caso de un conflicto, ¿Quién decide (rol)?
+El administrador del proyecto reúne a los que hicieron los cambios y se toma la decisión de que cambio es el que se queda como final.
+34.- ¿Cuáles son los consejos para poder escribir un buen mensaje en tus commits y demás cosas?
+Type / Tipo
+El tipo es contenido en el título y puede ser de alguno de los siguientes casos:
+•	feat: Una nueva característica.
+•	fix: Se solucionó un bug.
+•	docs: Se realizaron cambios en la documentación.
+•	style: Se aplicó formato, comas y puntos faltantes, etc.; Sin cambios en el código.
+•	refactor: Refactorización del código en producción
+•	test: Se añadieron pruebas, refactorización de pruebas; Sin cambios en el código.
+•	chore: Actualización de tareas de build, configuración del admin. de paquetes; Sin cambios en el código.
+Subject / Asunto
+El asunto no debe contener más de 50 caracteres, debe iniciar con una letra mayúscula y no terminar con un punto.
+Body / Cuerpo
+No todos los commits son lo suficientemente complejos como para necesitar de un cuerpo, sin embargo es opcional y se usan en caso de que el commit requiera una explicación y contexto. Utilizamos el cuerpo para explicar el ¿Qué y Porque? de un commit y no el ¿Cómo? Al escribir el cuerpo, requerimos de una línea en blanco entre el título y el cuerpo, además debemos limitar la longitud de cada línea a no más de 72 caracteres.
+
+
+
+Footer / Pie
+El pie es opcional al igual que el cuerpo, pero este es usado para el seguimiento de los IDs con incidencias.
+
+
+
+
+
+14.	ales son las practicas generales de aceptación de parches 
+Controles compensatorios.
+Los parches pueden no estar disponibles cuando se desean, por lo que es necesario crear una cultura para evitar problemas
+Establecer un programa de gestión de parches.
+Implantar un programa adecuado de gestión de parches en los sistemas de control va a permitir controlar las actualizaciones que afectan a los activos de la empresa. 
+Prueba de parches.
+La distribución de parches se lleva a cabo por los fabricantes una vez comprobado su correcto funcionamiento. 
+Distribución de parches.
+El gestor de parches necesita acceso a internet para la descarga de actualizaciones, pero un sistema de control no debe conectarse a internet.
+
+
+
+15.	¿Cuales son y para que sirven los archivos escondidos que se crean es los repositorios?
+Los archivos ocultos son aquellos dentro de la carpeta .git 
+
+16.	¿Que pasa si uno de ellos es manipulado?
+Siempre se puede regresar a versiones anteriores ya sea dentro del repositorio o del ordenador donde se crearon
+17.	¿De que manera podemos comprobar si la clonación de un repositorio es fidedigna?
+Comprobando el archivo nosotros mismos dentro de nuestro SCV 
+O desde nuestra consola de git con el comando git fsk.
+18.	¿Cual es la manera mas común en que son atacados los repositorios y en general los sistemas de control de versiones? Sus archivos pueden ser modificados o corrompidos por usuarios que tienen acceso a ese repositorio en general sucede en repositorios públicos donde todos lo pueden usar 
+
+
+
+Como crear un repositorio 
+
+Primero que nada debemos de tener en cuenta que SCV vamos a utilizar en este caso yo utilizare  git hub ya que es uno de los mas comunes y mas fáciles para mi 
+https://github.com/
+aquí solo creamos una cuenta  dentro de nuestra cuenta 
+Para utilizar este sistema necesitamos una herramienta que se llama git 
+
+Aquí solo necesitamos llenar campos  si nuestro repositorio será publico o privado el y el nombre nuestro repositorio y le damos crear 
+
+Listo ahora vamos a nuestros archivos 
+
+Instalaremos git 
+https://git-scm.com/downloads
+después de descargar instalamos (solo presionamos siguiente )
+
+abrimos nuestra ventana de git 
+
+Tan fácil como dar click derecho en dentro de nuestro documento y abrir git bash
+ 
+
+
+
+ Es importante abrirlo desde nuestra carpeta para asi tener ya la dirección de nuestro documento 
+
+ Volvemos a nuestra cuenta dentro de el SCV  y copiamos la liga de nuestro repositorio
+
+Dentro de nuestra ventana de git bash ponemos el comando git clone y la liga de nuestro repositorio
+
+ Si vamos a donde están nuestros documentos podemos ver que se añadió la carpeta de nuestro repositorio  que es la prueba 
+
+
+ De nuevo en nuestra ventana de git veremos  nuestros documentos 
+Con el comando  ls 
+
+Ahora añadimos los documentos a nuestra carpeta con el comando git add  en este caso como se añadirán todo se pone el comando git add -A   en caso de que solo se quiera uno en especifico seria git ad y el nombre del documento  ejemplo git add hola mundo.txt.txt
+
+después de esto comprobaremos que todo este correcto con el comando git status que nos mostrara nuestros documentos en rojo 
+Luego hacemos el commit  con git commit -m “el nombre de nuestro commit”
+Comprobamos nuestro commit con git log (esto nos mostrara todos los commits que emos echo )
+Git log –oneline  mostrar de manera mas ordenada 
+Luego lo subimos con git push  
+
+
+
+
